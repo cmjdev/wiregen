@@ -1,0 +1,71 @@
+connectors:
+  HW.PDM.1A:
+    pins: [A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12]
+    pinlabels: [IN.12,IN.10,IN.8,IN.6,IN.4,IN.2,IN.1,IN.3,IN.5,IN.7,IN.9,IN.11]
+  HW.PDM.1B:
+    pins: [B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12]
+    pinlabels: [NC,NC,NC,OUT.15,OUT.14,OUT.13,OUT.10,OUT.11,OUT.12,NC,NC,NC]
+  HW.PDM.1C:
+    pins: [C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12]
+    pinlabels: [IN.16,IN.15,IGN12V,OUT.3,OUT.2,OUT.1,GND,CAN.H,CAN.L,5V,IN.13,IN.14]
+  HW.PDM.1D:
+    pins: [D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12]
+    pinlabels: [NC,NC,NC,OUT.9,OUT.8,OUT.7,OUT.4,OUT.5,OUT.6]
+  
+  # REAR DEVICES
+  FAN.1:
+    pinlabels: [12V, GND]
+    show_pincount: false
+  FAN.2:
+    pinlabels: [12V, GND]
+    show_pincount: false
+  WP: # WATER PUMP
+    pinlabels: [12V, GND]
+    show_pincount: false
+  FP.1: # LIFT PUMP
+    pinlabels: [12V, GND]
+    show_pincount: false
+  FP.2: # PRIMARY PUMP
+    pinlabels: [12V, GND]
+    show_pincount: false
+  CS: # COOL SUIT
+    pinlabels: [12V, GND]
+    show_pincount: false
+  NOS.H: # NOS HEATER
+    pinlabels: [12V, GND]
+    show_pincount: false
+
+
+
+branches:
+  REAR.1:
+    wirecount: 10
+
+# cables:
+#   REAR.1:
+#     color_code: DIN
+#     show_wirecount: false
+#     show_wirenumbers: false
+#     wirecount: 10
+#   RGND.1:
+#     show_wirecount: false
+#     show_wirenumbers: false
+#     wirecount: 4
+
+# connections:
+#   -
+#     - HW.PDM.1A: [IN.12,IN.10]
+#     - REAR.1: [6,7]
+#   -
+#     - HW.PDM.1B: [OUT.15, OUT.14]
+#     - REAR.1: [6,7]
+#   # - 
+#   #   - LINK.PDM: [1,2,3,4,5] # PWROUT1,PWROUT1,ADIO1,PWROUT2,PWROUT2
+#   #   - REAR.1: [1-5]
+
+  
+tweak:
+  override:
+    graph:
+      ranksep: '6' # Larger horizontal separation between nodes
+      splines: 'true' # Or ortho?
