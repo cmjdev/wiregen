@@ -1,16 +1,17 @@
 import yaml
 
 # TODO: Collect all connectors/branches/connections before render
-# TODO: Assume if no receiving side exists that it is a branch. 
+# TODO: Assume if no receiving side exists that it is a branch.
+# TODO: Change to encapsulating TD to get rid of tacking L/R node
 
 with open('test.yaml', 'r') as file:
     boop = yaml.safe_load(file)
 
 
 out_file = '''
-graph {nodesep=.2 ranksep=2 rankdir=LR
+graph {nodesep=.2 ranksep=4 rankdir=LR
 
-node [shape=none];
+node [shape=none fontname="Lucida Console" fontsize=8];
 edge [color="#000000:#0066ff:#000000"];\n
 '''
 
@@ -37,7 +38,7 @@ for c in connectors:
 
 # BUILD BRANCHES
 for b in branches:
-    out = f'"{b}" [label = <<TABLE border="0" cellspacing="0" color="grey" cellborder="1"><TR><TD colspan="2">{b}</TD></TR>'
+    out = f'"{b}" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">{b}</TD></TR>'
     for i in range(branches[b]['wirecount']):
         out += f'<TR><TD PORT="{i}L"></TD><TD PORT="{i}R"></TD></TR>'
     out += '</TABLE>>];'
