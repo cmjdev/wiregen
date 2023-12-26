@@ -9,7 +9,7 @@ with open('test.yaml', 'r') as file:
 
 
 out_file = '''
-graph {nodesep=.2 ranksep=4 rankdir=LR
+graph {nodesep=.1 ranksep=2 rankdir=LR
 
 node [shape=none fontname="Lucida Console" fontsize=8];
 edge [color="#000000:#0066ff:#000000"];\n
@@ -45,15 +45,24 @@ for i,k in enumerate(boop['connections']):
         connections.append((link_from[0], link, link_to[0], link_to[1][j]))
 
 # Create all branches
+
+# TODO: Branch info partially broken.. ins OR outs work, not both
 for c in connections:
+    print(c)
     if c[0] not in connectors:
         if c[0] not in branches:
-            branches[c[0]] = {"ports": [c[1]]}
-        else: branches[c[0]]['ports'].append(c[1])
+            branches[c[0]] = {"ports": [c[1]], "in": {}, "out": {c[1]: f"{c[2]}:{c[3]}"}}
+        elif c[1] not in branches[c[0]]['ports']:
+            branches[c[0]]['ports'].append(c[1])
+            branches[c[0]]["out"][c[1]] = f"{c[2]}:{c[3]}"
+        else: branches[c[0]]["out"][c[1]] = f"{c[2]}:{c[3]}"
     if c[2] not in connectors:
         if c[2] not in branches:
-            branches[c[2]] = {"ports": [c[3]]}
-        else: branches[c[2]]['ports'].append(c[3])
+            branches[c[2]] = {"ports": [c[3]], "in": {c[3]: f"{c[0]}:{c[1]}"}, "out": {}}
+        elif c[3] not in branches[c[2]]['ports']:
+            branches[c[2]]['ports'].append(c[3])
+            branches[c[2]]["in"][c[3]] = f"{c[0]}:{c[1]}"
+        else: branches[c[2]]["in"][c[3]] = f"{c[0]}:{c[1]}"
 
 # Render connectors
 for k,v in connectors.items():
@@ -67,8 +76,13 @@ for k,v in connectors.items():
 # Render branches
 for k,v in branches.items():
     out = f'"{k}" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">{k}</TD></TR>'
+    print(v['out'])
     for i in v['ports']:
-        out += f'<TR><TD PORT="{i}L"></TD><TD PORT="{i}R"></TD></TR>'
+        in_link = v["in"][i] if i in v["in"] else ""
+        out_link = v["out"][i] if i in v["out"] else ""
+        out += f'<TR><TD HEIGHT="10" PORT="{i}L">{in_link}</TD><TD PORT="{i}R">{out_link}</TD></TR>'
+        # try: out += f'{v["in"][i]}</TD><TD PORT="{i}R">{v["out"]}</TD></TR>'
+        # except: out += f'</TD><TD PORT="{i}R">{v["out"]}</TD></TR>'
     out += '</TABLE>>];'
     out_file += out + '\n'
     
@@ -80,3 +94,5 @@ out_file += '}'
 
 with open('out.gv', 'w') as file:
     file.write(out_file)
+
+print(branches)

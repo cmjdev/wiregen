@@ -1,5 +1,5 @@
 
-graph {nodesep=.2 ranksep=4 rankdir=LR
+graph {nodesep=.1 ranksep=2 rankdir=LR
 
 node [shape=none fontname="Lucida Console" fontsize=8];
 edge [color="#000000:#0066ff:#000000"];
@@ -15,21 +15,30 @@ edge [color="#000000:#0066ff:#000000"];
 "FP.2" [label = <<TABLE border="0" cellspacing="0" cellborder="1"><TR><TD colspan="2">FP.2</TD></TR><TR><TD PORT="1L">12V</TD><TD PORT="1R">1</TD></TR><TR><TD PORT="2L">GND</TD><TD PORT="2R">2</TD></TR></TABLE>>];
 "CS" [label = <<TABLE border="0" cellspacing="0" cellborder="1"><TR><TD colspan="2">CS</TD></TR><TR><TD PORT="1L">12V</TD><TD PORT="1R">1</TD></TR><TR><TD PORT="2L">GND</TD><TD PORT="2R">2</TD></TR></TABLE>>];
 "NOS.H" [label = <<TABLE border="0" cellspacing="0" cellborder="1"><TR><TD colspan="2">NOS.H</TD></TR><TR><TD PORT="1L">12V</TD><TD PORT="1R">1</TD></TR><TR><TD PORT="2L">GND</TD><TD PORT="2R">2</TD></TR></TABLE>>];
-"REAR.1" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.1</TD></TR><TR><TD PORT="0L"></TD><TD PORT="0R"></TD></TR><TR><TD PORT="1L"></TD><TD PORT="1R"></TD></TR><TR><TD PORT="2L"></TD><TD PORT="2R"></TD></TR><TR><TD PORT="3L"></TD><TD PORT="3R"></TD></TR><TR><TD PORT="5L"></TD><TD PORT="5R"></TD></TR><TR><TD PORT="6L"></TD><TD PORT="6R"></TD></TR><TR><TD PORT="7L"></TD><TD PORT="7R"></TD></TR><TR><TD PORT="8L"></TD><TD PORT="8R"></TD></TR><TR><TD PORT="0L"></TD><TD PORT="0R"></TD></TR><TR><TD PORT="1L"></TD><TD PORT="1R"></TD></TR><TR><TD PORT="2L"></TD><TD PORT="2R"></TD></TR><TR><TD PORT="3L"></TD><TD PORT="3R"></TD></TR><TR><TD PORT="4L"></TD><TD PORT="4R"></TD></TR><TR><TD PORT="5L"></TD><TD PORT="5R"></TD></TR><TR><TD PORT="6L"></TD><TD PORT="6R"></TD></TR><TR><TD PORT="7L"></TD><TD PORT="7R"></TD></TR><TR><TD PORT="8L"></TD><TD PORT="8R"></TD></TR><TR><TD PORT="9L"></TD><TD PORT="9R"></TD></TR><TR><TD PORT="10L"></TD><TD PORT="10R"></TD></TR><TR><TD PORT="12L"></TD><TD PORT="12R"></TD></TR><TR><TD PORT="13L"></TD><TD PORT="13R"></TD></TR><TR><TD PORT="14L"></TD><TD PORT="14R"></TD></TR></TABLE>>];
-"REAR.1.1" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.1.1</TD></TR><TR><TD PORT="10L"></TD><TD PORT="10R"></TD></TR><TR><TD PORT="11L"></TD><TD PORT="11R"></TD></TR><TR><TD PORT="12L"></TD><TD PORT="12R"></TD></TR><TR><TD PORT="13L"></TD><TD PORT="13R"></TD></TR><TR><TD PORT="0L"></TD><TD PORT="0R"></TD></TR><TR><TD PORT="1L"></TD><TD PORT="1R"></TD></TR><TR><TD PORT="2L"></TD><TD PORT="2R"></TD></TR><TR><TD PORT="3L"></TD><TD PORT="3R"></TD></TR><TR><TD PORT="4L"></TD><TD PORT="4R"></TD></TR><TR><TD PORT="5L"></TD><TD PORT="5R"></TD></TR><TR><TD PORT="6L"></TD><TD PORT="6R"></TD></TR></TABLE>>];
-"REAR.1.2" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.1.2</TD></TR><TR><TD PORT="0L"></TD><TD PORT="0R"></TD></TR><TR><TD PORT="1L"></TD><TD PORT="1R"></TD></TR><TR><TD PORT="2L"></TD><TD PORT="2R"></TD></TR><TR><TD PORT="3L"></TD><TD PORT="3R"></TD></TR><TR><TD PORT="4L"></TD><TD PORT="4R"></TD></TR><TR><TD PORT="5L"></TD><TD PORT="5R"></TD></TR><TR><TD PORT="6L"></TD><TD PORT="6R"></TD></TR></TABLE>>];
-"HW.PDM.1A":"C1R" -- "REAR.1":"0L"
+"ECU" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">ECU</TD></TR><TR><TD HEIGHT="10" PORT="1L"></TD><TD PORT="1R">HW.PDM.1A:A6</TD></TR><TR><TD HEIGHT="10" PORT="2L"></TD><TD PORT="2R">HW.PDM.1A:A7</TD></TR><TR><TD HEIGHT="10" PORT="3L"></TD><TD PORT="3R">HW.PDM.1A:A8</TD></TR></TABLE>>];
+"REAR.1" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.1</TD></TR><TR><TD HEIGHT="10" PORT="0L">HW.PDM.1A:A1</TD><TD PORT="0R">REAR.1.1:0</TD></TR><TR><TD HEIGHT="10" PORT="1L">HW.PDM.1A:A2</TD><TD PORT="1R">REAR.1.1:1</TD></TR><TR><TD HEIGHT="10" PORT="2L">HW.PDM.1A:A3</TD><TD PORT="2R">REAR.1.1:2</TD></TR><TR><TD HEIGHT="10" PORT="3L">HW.PDM.1A:A4</TD><TD PORT="3R">REAR.1.1:3</TD></TR><TR><TD HEIGHT="10" PORT="4L">HW.PDM.1B:B1</TD><TD PORT="4R">REAR.1.1:4</TD></TR><TR><TD HEIGHT="10" PORT="5L">HW.PDM.1B:B2</TD><TD PORT="5R">REAR.1.1:5</TD></TR><TR><TD HEIGHT="10" PORT="6L">HW.PDM.1B:B3</TD><TD PORT="6R">REAR.1.1:6</TD></TR><TR><TD HEIGHT="10" PORT="7L">HW.PDM.1B:B4</TD><TD PORT="7R">REAR.1.2:0</TD></TR><TR><TD HEIGHT="10" PORT="8L">HW.PDM.1C:C1</TD><TD PORT="8R">REAR.1.2:1</TD></TR><TR><TD HEIGHT="10" PORT="9L">HW.PDM.1C:C2</TD><TD PORT="9R">REAR.1.2:2</TD></TR><TR><TD HEIGHT="10" PORT="10L">HW.PDM.1C:C3</TD><TD PORT="10R">REAR.1.2:3</TD></TR><TR><TD HEIGHT="10" PORT="11L">HW.PDM.1C:C4</TD><TD PORT="11R"></TD></TR><TR><TD HEIGHT="10" PORT="12L">HW.PDM.1D:D1</TD><TD PORT="12R">REAR.1.2:4</TD></TR><TR><TD HEIGHT="10" PORT="13L">HW.PDM.1D:D2</TD><TD PORT="13R">REAR.1.2:5</TD></TR><TR><TD HEIGHT="10" PORT="14L">HW.PDM.1D:D3</TD><TD PORT="14R">REAR.1.2:6</TD></TR><TR><TD HEIGHT="10" PORT="15L">HW.PDM.1D:D4</TD><TD PORT="15R"></TD></TR></TABLE>>];
+"REAR.1.1" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.1.1</TD></TR><TR><TD HEIGHT="10" PORT="0L">REAR.1:0</TD><TD PORT="0R">FAN.1:1</TD></TR><TR><TD HEIGHT="10" PORT="1L">REAR.1:1</TD><TD PORT="1R">FAN.1:2</TD></TR><TR><TD HEIGHT="10" PORT="2L">REAR.1:2</TD><TD PORT="2R">FAN.2:1</TD></TR><TR><TD HEIGHT="10" PORT="3L">REAR.1:3</TD><TD PORT="3R">FAN.2:2</TD></TR><TR><TD HEIGHT="10" PORT="4L">REAR.1:4</TD><TD PORT="4R">WP:1</TD></TR><TR><TD HEIGHT="10" PORT="5L">REAR.1:5</TD><TD PORT="5R">WP:2</TD></TR><TR><TD HEIGHT="10" PORT="6L">REAR.1:6</TD><TD PORT="6R"></TD></TR></TABLE>>];
+"REAR.1.2" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.1.2</TD></TR><TR><TD HEIGHT="10" PORT="0L">REAR.1:7</TD><TD PORT="0R"></TD></TR><TR><TD HEIGHT="10" PORT="1L">REAR.1:8</TD><TD PORT="1R">CS:1</TD></TR><TR><TD HEIGHT="10" PORT="2L">REAR.1:9</TD><TD PORT="2R">NOS.H:1</TD></TR><TR><TD HEIGHT="10" PORT="3L">REAR.1:10</TD><TD PORT="3R">NOS.H:2</TD></TR><TR><TD HEIGHT="10" PORT="4L">REAR.1:12</TD><TD PORT="4R"></TD></TR><TR><TD HEIGHT="10" PORT="5L">REAR.1:13</TD><TD PORT="5R"></TD></TR><TR><TD HEIGHT="10" PORT="6L">REAR.1:14</TD><TD PORT="6R"></TD></TR><TR><TD HEIGHT="10" PORT="HL">REAR.GND.1:0</TD><TD PORT="HR">NOS.H:2</TD></TR></TABLE>>];
+"REAR.GND.1" [label = <<TABLE border="1" cellspacing="0" color="grey" cellborder="0"><TR><TD colspan="2">REAR.GND.1</TD></TR><TR><TD HEIGHT="10" PORT="0L"></TD><TD PORT="0R">REAR.1.2:H</TD></TR></TABLE>>];
+"ECU":"1R" -- "HW.PDM.1A":"A6L"
+"ECU":"2R" -- "HW.PDM.1A":"A7L"
+"ECU":"3R" -- "HW.PDM.1A":"A8L"
+"HW.PDM.1A":"A1R" -- "REAR.1":"0L"
 "HW.PDM.1A":"A2R" -- "REAR.1":"1L"
 "HW.PDM.1A":"A3R" -- "REAR.1":"2L"
 "HW.PDM.1A":"A4R" -- "REAR.1":"3L"
-"HW.PDM.1B":"B1R" -- "REAR.1":"5L"
-"HW.PDM.1B":"B2R" -- "REAR.1":"6L"
-"HW.PDM.1B":"B3R" -- "REAR.1":"7L"
-"HW.PDM.1B":"B4R" -- "REAR.1":"8L"
-"HW.PDM.1C":"C1R" -- "REAR.1.1":"10L"
-"HW.PDM.1C":"C2R" -- "REAR.1.1":"11L"
-"HW.PDM.1C":"C3R" -- "REAR.1.1":"12L"
-"HW.PDM.1C":"C4R" -- "REAR.1.1":"13L"
+"HW.PDM.1B":"B1R" -- "REAR.1":"4L"
+"HW.PDM.1B":"B2R" -- "REAR.1":"5L"
+"HW.PDM.1B":"B3R" -- "REAR.1":"6L"
+"HW.PDM.1B":"B4R" -- "REAR.1":"7L"
+"HW.PDM.1C":"C1R" -- "REAR.1":"8L"
+"HW.PDM.1C":"C2R" -- "REAR.1":"9L"
+"HW.PDM.1C":"C3R" -- "REAR.1":"10L"
+"HW.PDM.1C":"C4R" -- "REAR.1":"11L"
+"HW.PDM.1D":"D1R" -- "REAR.1":"12L"
+"HW.PDM.1D":"D2R" -- "REAR.1":"13L"
+"HW.PDM.1D":"D3R" -- "REAR.1":"14L"
+"HW.PDM.1D":"D4R" -- "REAR.1":"15L"
 "REAR.1":"0R" -- "REAR.1.1":"0L"
 "REAR.1":"1R" -- "REAR.1.1":"1L"
 "REAR.1":"2R" -- "REAR.1.1":"2L"
@@ -44,4 +53,16 @@ edge [color="#000000:#0066ff:#000000"];
 "REAR.1":"12R" -- "REAR.1.2":"4L"
 "REAR.1":"13R" -- "REAR.1.2":"5L"
 "REAR.1":"14R" -- "REAR.1.2":"6L"
+"REAR.1.1":"0R" -- "FAN.1":"1L"
+"REAR.1.1":"1R" -- "FAN.1":"2L"
+"REAR.1.1":"2R" -- "FAN.2":"1L"
+"REAR.1.1":"3R" -- "FAN.2":"2L"
+"REAR.1.1":"4R" -- "WP":"1L"
+"REAR.1.1":"5R" -- "WP":"2L"
+"REAR.1.2":"1R" -- "CS":"1L"
+"REAR.1.2":"2R" -- "CS":"2L"
+"REAR.1.2":"2R" -- "NOS.H":"1L"
+"REAR.1.2":"3R" -- "NOS.H":"2L"
+"REAR.GND.1":"0R" -- "REAR.1.2":"HL"
+"REAR.1.2":"HR" -- "NOS.H":"2L"
 }

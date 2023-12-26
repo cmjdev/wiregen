@@ -28,48 +28,18 @@ connectors:
   NOS.H: # NOS HEATER
     pinlabels: [12V, GND]
 
-
-
-branches:
-  REAR.1:
-    wirecount: 15
-  REAR.1.1:
-    wirecount: 7
-  REAR.1.2:
-    wirecount: 7
-
 connections:
-  - [HW.PDM.1A: [C1,A2,A3,A4], REAR.1: [0,1,2,3]]
-  - [HW.PDM.1B: [B1,B2,B3,B4], REAR.1: [5,6,7,8]]
-  - [HW.PDM.1C: [C1,C2,C3,C4], REAR.1.1: [10,11,12,13]]
+  - [ECU: [1,2,3], HW.PDM.1A: [A6,A7,A8]]
+  - [HW.PDM.1A: [A1,A2,A3,A4], REAR.1: [0,1,2,3]]
+  - [HW.PDM.1B: [B1,B2,B3,B4], REAR.1: [4,5,6,7]]
+  - [HW.PDM.1C: [C1,C2,C3,C4], REAR.1: [8,9,10,11]]
+  - [HW.PDM.1D: [D1,D2,D3,D4], REAR.1: [12,13,14,15]]
   - [REAR.1: [0,1,2,3,4,5,6], REAR.1.1: [0,1,2,3,4,5,6]]
   - [REAR.1: [7,8,9,10,12,13,14], REAR.1.2: [0,1,2,3,4,5,6]]
-
-# cables:
-#   REAR.1:
-#     color_code: DIN
-#     show_wirecount: false
-#     show_wirenumbers: false
-#     wirecount: 10
-#   RGND.1:
-#     show_wirecount: false
-#     show_wirenumbers: false
-#     wirecount: 4
-
-# connections:
-#   -
-#     - HW.PDM.1A: [IN.12,IN.10]
-#     - REAR.1: [6,7]
-#   -
-#     - HW.PDM.1B: [OUT.15, OUT.14]
-#     - REAR.1: [6,7]
-#   # - 
-#   #   - LINK.PDM: [1,2,3,4,5] # PWROUT1,PWROUT1,ADIO1,PWROUT2,PWROUT2
-#   #   - REAR.1: [1-5]
-
-  
-tweak:
-  override:
-    graph:
-      ranksep: '6' # Larger horizontal separation between nodes
-      splines: 'true' # Or ortho?
+  - [REAR.1.1: [0,1], FAN.1: [1,2]]
+  - [REAR.1.1: [2,3], FAN.2: [1,2]]
+  - [REAR.1.1: [4,5], WP: [1,2]]
+  - [REAR.1.2: [1,2], CS: [1,2]]
+  - [REAR.1.2: [2,3], NOS.H: [1,2]]
+  - [REAR.GND.1: [0], REAR.1.2: [H]]
+  - [REAR.1.2: [H], NOS.H: [2]]
