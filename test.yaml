@@ -39,7 +39,7 @@ branches:
     wirecount: 7
 
 connections:
-  - [HW.PDM.1A: [A1,A2,A3,A4], REAR.1: [0,1,2,3]]
+  - [HW.PDM.1A: [C1,A2,A3,A4], REAR.1: [0,1,2,3]]
   - [HW.PDM.1B: [B1,B2,B3,B4], REAR.1: [5,6,7,8]]
   - [HW.PDM.1C: [C1,C2,C3,C4], REAR.1.1: [10,11,12,13]]
   - [REAR.1: [0,1,2,3,4,5,6], REAR.1.1: [0,1,2,3,4,5,6]]
