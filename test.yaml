@@ -10,36 +10,40 @@ connectors:
     pinlabels: [IN.16,IN.15,IGN12V,OUT.3,OUT.2,OUT.1,GND,CAN.H,CAN.L,5V,IN.13,IN.14]
   HW.PDM.1D:
     pins: [D1,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12]
-    pinlabels: [NC,NC,NC,OUT.9,OUT.8,OUT.7,OUT.4,OUT.5,OUT.6]
+    pinlabels: [NC,NC,NC,OUT.9,OUT.8,OUT.7,OUT.4,OUT.5,OUT.6, NC, NC, NC]
   
   # REAR DEVICES
   FAN.1:
     pinlabels: [12V, GND]
-    show_pincount: false
   FAN.2:
     pinlabels: [12V, GND]
-    show_pincount: false
   WP: # WATER PUMP
     pinlabels: [12V, GND]
-    show_pincount: false
   FP.1: # LIFT PUMP
     pinlabels: [12V, GND]
-    show_pincount: false
   FP.2: # PRIMARY PUMP
     pinlabels: [12V, GND]
-    show_pincount: false
   CS: # COOL SUIT
     pinlabels: [12V, GND]
-    show_pincount: false
   NOS.H: # NOS HEATER
     pinlabels: [12V, GND]
-    show_pincount: false
 
 
 
 branches:
   REAR.1:
-    wirecount: 10
+    wirecount: 15
+  REAR.1.1:
+    wirecount: 15
+  REAR.1.2:
+    wirecount: 15
+
+connections:
+  - [HW.PDM.1A: [A1,A2,A3,A4], REAR.1: [0,1,2,3,4]]
+  - [HW.PDM.1B: [B1,B2,B3,B4], REAR.1: [5,6,7,8,9]]
+  - [HW.PDM.1C: [C1,C2,C3,C4], REAR.1: [10,11,12,13,14]]
+  - [REAR.1: [0,1,2,3,4,5,6], REAR.1.1: [0,1,2,3,4,5,6]]
+  - [REAR.1: [7,8,9,10,12,13,14], REAR.1.2: [7,8,9,10,11,12,13,14]]
 
 # cables:
 #   REAR.1:
