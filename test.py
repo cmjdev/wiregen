@@ -80,7 +80,7 @@ for k,v in branches.items():
     for i in v['ports']:
         in_link = v["in"][i] if i in v["in"] else ""
         out_link = v["out"][i] if i in v["out"] else ""
-        out += f'<TR><TD HEIGHT="10" PORT="{i}L">{in_link}</TD><TD PORT="{i}R">{out_link}</TD></TR>'
+        out += f'<TR><TD PORT="{i}L">{in_link}</TD><TD PORT="{i}R">{out_link}</TD></TR>'
         # try: out += f'{v["in"][i]}</TD><TD PORT="{i}R">{v["out"]}</TD></TR>'
         # except: out += f'</TD><TD PORT="{i}R">{v["out"]}</TD></TR>'
     out += '</TABLE>>];'
